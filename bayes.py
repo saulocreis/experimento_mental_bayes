@@ -14,18 +14,18 @@ while(True):
   while(True):
    print("SEU OBJETIVO: descobrir em qual regiao a marcacao foi feita.")
    print("Agora o ajudante vai lancar a bola quantas vezes voce desejar para obter informacao.")
-   print("Depois desses lancamentos, ele lhe dira em quantos deles a bola ficou a ESQUERDA ou a DIREITA da marcacao.")
+   print("Depois desses lancamentos, ele lhe dira em quantos deles a marcacao ficou a ESQUERDA ou a DIREITA da bola.")
    n_esq, n_dir, n_lanc = 0, 0, int(input("\nAJUDANTE: Quantas vezes devo lancar a bola? "))
    for i in range(n_lanc):
     reg_lanc = aleatorio(1, n_reg)
     n_esq,n_dir = n_esq+(reg_lanc<marc)*1, n_dir+(reg_lanc>marc)*1
    n_esq_t,n_dir_t,n_lanc_t = n_esq_t+n_esq,n_dir_t+n_dir,n_lanc_t+n_lanc
-   print(f"AJUDANTE: A bola foi lancada {n_lanc} vez(es) agora. Em relacao a marcacao,")
-   print(f"{n_esq} foram a esquerda ({100*n_esq/n_lanc:.1f} % desses lancamentos)")
-   print(f"{n_dir} foram a direita ({100*n_dir/n_lanc:.1f} % desses lancamentos)")
+   print(f"AJUDANTE: A bola foi lancada {n_lanc} vez(es) agora. Em relacao a bola, a marcacao ficou")
+   print(f"{n_esq} vez(es) a direita ({100*n_esq/n_lanc:.1f} % desses lancamentos)")
+   print(f"{n_dir} vez(es) a esquerda ({100*n_dir/n_lanc:.1f} % desses lancamentos)")
    print(f"\nAJUDANTE: Total de {n_lanc_t} lancamentos, sendo:")
-   print(f"{n_esq_t} a esquerda ({100*n_esq_t/n_lanc_t:.1f} % do total)")
-   print(f"{n_dir_t} a direita ({100*n_dir_t/n_lanc_t:.1f} % do total)")
+   print(f"{n_esq_t} a direita ({100*n_esq_t/n_lanc_t:.1f} % do total)")
+   print(f"{n_dir_t} a esquerda ({100*n_dir_t/n_lanc_t:.1f} % do total)")
    tent = int(input("\nAJUDANTE: Em qual regiao voce acha marcacao foi feita? "))
    if tent == marc:
     print(f"AJUDANTE: VOCE ACERTOU! A marcacao foi feita na regiao {marc}.\n")
